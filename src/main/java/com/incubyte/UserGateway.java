@@ -19,4 +19,10 @@ public class UserGateway {
         List<Post> posts = client.toBlocking().retrieve(HttpRequest.GET("/posts"), Argument.listOf(Post.class));
         return posts;
     }
+
+
+    public List<User> getUsers() {
+        List<User> users = client.toBlocking().retrieve(HttpRequest.GET("/users"), Argument.listOf(User.class));
+        return users;
+    }
 }

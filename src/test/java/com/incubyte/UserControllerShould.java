@@ -16,6 +16,7 @@ import static org.mockito.Mockito.verify;
 public class UserControllerShould {
     UserController userController;
     String id;
+    String username;
 
     @Mock
     UserService service;
@@ -25,12 +26,19 @@ public class UserControllerShould {
     public void init() {
         userController = new UserController(service);
         id = "2";
+        username = "Samantha";
     }
 
     @Test
     public void get_posts() {
-        List<Post> posts = userController.getPosts(id);
+        List<Post> posts = userController.getPosts(Integer.parseInt(id));
         verify(service).getPosts(id);
 
+    }
+
+    @Test
+    public void get_posts_by_username() {
+        List<Post> posts = userController.getPostsByUsername(username);
+        verify(service).getPostsByUsername(username);
     }
 }

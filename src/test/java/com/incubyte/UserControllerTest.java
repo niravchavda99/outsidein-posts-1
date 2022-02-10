@@ -33,4 +33,12 @@ class UserControllerTest {
         }
     }
 
+    @Test
+    public void get_posts_by_username() {
+        List<Map> posts = client.toBlocking().retrieve(HttpRequest.GET("/users/Samantha/post"), Argument.listOf(Map.class));
+        Assertions.assertFalse(posts.isEmpty());
+
+
+    }
+
 }
