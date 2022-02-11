@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: outsidein-posts-0.1-all.jar
-          my-artifactpath: build/libs/outsidein-posts-0.1-all.jar
+          path: build/libs/outsidein-posts-0.1-all.jar
 #  build:
 #    runs-on: ubuntu-latest
 #    steps:
