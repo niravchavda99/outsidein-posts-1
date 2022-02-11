@@ -21,4 +21,9 @@ public class PostController {
     public List<Post> titleContains(@QueryValue String q) {
         return postService.titleContains(q);
     }
+
+    @Get("/bodyContains")
+    public List<Post> bodyContains(@QueryValue String body) {
+        return postService.bodyContains(body);
+    }
 }

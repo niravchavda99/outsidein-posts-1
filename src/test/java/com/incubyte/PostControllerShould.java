@@ -21,4 +21,11 @@ public class PostControllerShould {
         List<Post> posts = postController.titleContains("qui est");
         verify(postService).titleContains("qui est");
     }
+
+    @Test
+    public void get_posts_where_body_contains_certain_string() {
+        PostController postController = new PostController(postService);
+        List<Post> posts = postController.bodyContains("dolorem dolore");
+        verify(postService).bodyContains("dolorem dolore");
+    }
 }

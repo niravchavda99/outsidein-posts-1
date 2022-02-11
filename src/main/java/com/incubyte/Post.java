@@ -1,9 +1,9 @@
 package com.incubyte;
 
 public class Post {
-
     private String userId;
     private String title;
+    private String body;
 
     public String getUserId() {
         return userId;
@@ -19,5 +19,13 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 }

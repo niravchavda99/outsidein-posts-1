@@ -34,4 +34,12 @@ public class PostControllerTest {
         Assertions.assertEquals("1", post.get("userId"));
         Assertions.assertEquals("qui est esse", post.get("title"));
     }
+
+    @Test
+    public void get_posts_if_body_contains_certain_string() {
+        List<Map> posts = client.toBlocking().retrieve(
+                HttpRequest.GET("/posts/bodyContains?body=" + URLEncoder.encode("consectetur", StandardCharsets.UTF_8)),
+                Argument.listOf(Map.class));
+        Assertions.assertFalse(posts.isEmpty());
+    }
 }

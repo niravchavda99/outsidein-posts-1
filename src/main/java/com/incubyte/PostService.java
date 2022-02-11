@@ -19,4 +19,11 @@ public class PostService {
                 .filter(post -> post.getTitle().contains(query))
                 .collect(Collectors.toList());
     }
+
+    public List<Post> bodyContains(String body) {
+        return jsonPlaceholderGateway.getPosts()
+                .stream()
+                .filter(post -> post.getBody().contains(body))
+                .collect(Collectors.toList());
+    }
 }
